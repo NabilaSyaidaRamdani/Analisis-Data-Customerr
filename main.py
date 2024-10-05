@@ -12,7 +12,7 @@ City = st.text_input(label='City', value='')
 
 State = st.text_input(label='State', value='')
 
-Customer ID = st.text_input(label='Customer ID', value='')
+CustomerID = st.text_input(label='Customer ID', value='')
  
 with st.sidebar:
     
