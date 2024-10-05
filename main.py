@@ -29,11 +29,3 @@ with st.sidebar:
         min_value=0, max_value=100, value=(0, 100)
     )
     st.write('Values:', values)
-
-pip install pandas matplotlib seaborn streamlit Babel
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
-from babel.numbers import format_currency
-sns.set(style='dark')
