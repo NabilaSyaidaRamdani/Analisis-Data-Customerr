@@ -38,21 +38,3 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-# Membuat tombol Sign In
-if st.button('Sign In'):
-    # Membuka tab baru menggunakan JavaScript
-    js = """
-    <script type="text/javascript">
-        window.open('https://your-sign-in-url.com', '_blank').focus();
-    </script>
-    """
-    st.markdown(js, unsafe_allow_html=True)
- 
-genre = st.selectbox(
-    label="What's your favorite movie genre",
-    options=('Comedy', 'Drama', 'Documentary')
-)
-# Tombol Sign Up
-if st.button("Sign Up"):
-    st.write("You clicked on Sign Up!")
