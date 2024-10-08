@@ -38,3 +38,29 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+import streamlit as st
+import matplotlib.pyplot as plt
+
+# Misal data telah dimuat, jika belum, pastikan kamu memuatnya dari file atau sumber lain
+# Contoh memuat data (jika data belum di-load)
+# import pandas as pd
+# data = pd.read_csv('path_to_your_data.csv')
+
+# Menghitung 10 kota teratas
+city_counts = data["customer_city"].value_counts().head(10)
+
+# Membuat plot menggunakan matplotlib
+fig, ax = plt.subplots()
+ax.barh(city_counts.index, city_counts.values)
+ax.set_xlabel("Number of Customers")
+ax.set_title("Top 10 Cities by Number of Customers")
+
+# Menambahkan label ke setiap bar
+for index, value in enumerate(city_counts.values):
+    ax.text(value, index, str(value))
+
+# Menampilkan plot di Streamlit
+st.pyplot(fig)
+
+
