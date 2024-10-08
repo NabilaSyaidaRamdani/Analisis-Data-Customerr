@@ -49,6 +49,10 @@ if st.button('Sign In'):
     """
     st.markdown(js, unsafe_allow_html=True)
  
+genre = st.selectbox(
+    label="What's your favorite movie genre",
+    options=('Comedy', 'Drama', 'Documentary')
+)
 # Tombol Sign Up
 if st.button("Sign Up"):
     st.write("You clicked on Sign Up!")
