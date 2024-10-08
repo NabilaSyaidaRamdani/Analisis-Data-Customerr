@@ -46,8 +46,44 @@ if st.button("Sign In"):
 # Tombol Sign Up
 if st.button("Sign Up"):
     st.write("You clicked on Sign Up!")
-    # Tambahkan logika untuk proses Sign Up di sini
-st.title('Belajar Analisis Data')
+
+
+
+
+import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Menghitung 10 kota teratas
+city_counts = data["customer_city"].value_counts().head(10)
+
+# Mengatur subheader
+st.subheader("Top 10 Cities by Number of Customers")
+
+# Membuat plot dengan subplots (seperti pada contoh kedua)
+fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(15, 10))
+
+# Membuat barplot horizontal
+colors = ["#90CAF9" if i == 0 else "#D3D3D3" for i in range(len(city_counts))]
+sns.barplot(x=city_counts.values, y=city_counts.index, palette=colors, ax=ax)
+
+# Mengatur label dan title
+ax.set_xlabel("Number of Customers", fontsize=20)
+ax.set_title("Top 10 Cities by Number of Customers", loc="center", fontsize=30)
+ax.tick_params(axis='y', labelsize=15)
+ax.tick_params(axis='x', labelsize=15)
+
+# Menambahkan label ke setiap bar
+for index, value in enumerate(city_counts.values):
+    ax.text(value, index, str(value), fontsize=15)
+
+# Menampilkan plot di Streamlit
+st.pyplot(fig)
+
+
+
+
+
 tab1, tab2, tab3 = st.tabs(["Tab 1", "Tab 2", "Tab 3"])
  
 with tab1:
